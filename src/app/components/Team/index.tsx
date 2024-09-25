@@ -30,10 +30,10 @@ export default function Team() {
     ];
 
     return (
-      <div className="px-4 py-6 mx-auto max-w-screen-xl" style={{ fontFamily: 'Inter, serif' }}>
-        <main>
-          <div className="text-center ">
-            <h1 className="font-bold text-5xl sm:text-5xl md:text-6xl text-[#F8A11B] mt-3 md:mb-2 sm:mt-4 md:mt-5">
+      <div id="team"  className="px-4 py-6 mt-10 mx-auto max-w-screen-xl" style={{ fontFamily: 'Inter, serif' }}>
+        <main className="mt-12">
+          <div className="text-center text-4xl ">
+            <h1 className="font-bold text-5xl sm:text-4xl md:text-4xl text-[#F8A11B] mt-3 md:mb-2 sm:mt-4 md:mt-5">
               Team
             </h1>
           </div>
