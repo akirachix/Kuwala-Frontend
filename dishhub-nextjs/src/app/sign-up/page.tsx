@@ -57,8 +57,6 @@ const SignUp = () => {
     }
   };
   
-
-
   const togglePasswordVisibility = () => {
     setPasswordVisible(!showPassword);
   };
@@ -68,7 +66,7 @@ const SignUp = () => {
       <div className="bg-white max-w-7xl h-auto flex flex-col md:flex-row rounded-lg ">
         <div className="mr-28 mb-15 ">
           <Image
-            src="/images/form.png"
+            src="/public/images/form.png"
             alt="Sign Up Illustration"
             layout="responsive"
             width={20}
