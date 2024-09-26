@@ -17,14 +17,14 @@ export default function Navbar() {
 
   return (
     <header className="relative bg-white">
-      <nav className="fixed flex items-center justify-between top-0 left-0 right-0 px-4 lg:px-0 bg-white mt-0 w-full">
+      <nav className="fixed flex items-center justify-between top-0 left-0 right-0 px-4 lg:px-0 bg-white mt-0 w-full z-50">
         <div className="w-40 sm:w-24 md:w-28 lg:w-32 xl:w-36 flex-shrink-0">
           <Image
             src="/images/logo.png"
             alt="DH logo"
             width={120}
             height={40}
-            className="w-full h-auto max-h-20 object-contain ml-4 sm:ml-8 md:ml-12 lg:ml-40"
+            className="w-full h-auto max-h-20 object-contain"
           />
         </div>
 
@@ -44,7 +44,7 @@ export default function Navbar() {
       </nav>
 
       {isMenuOpen && (
-        <div className='fixed inset-0 z-50 bg-white flex flex-col items-center justify-center'>
+        <div className='fixed inset-0 z-40 bg-white flex flex-col items-center justify-center'>
           <button
             onClick={toggleMenu}
             className="absolute top-4 right-4 p-2 focus:outline-none"

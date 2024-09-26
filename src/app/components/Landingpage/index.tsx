@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function LandingPage() {
   return (
-    <main id='Landingpage' className="container mx-auto px-4 sm:px-6 mb-40 mt-12 lg:px-8 py-12 lg:py-24 -mb-12" style={{ fontFamily: 'Inter, serif' }}>
+    <main id='Landingpage' className="container mx-auto px-4 sm:px-6 mb-40 mt-12 lg:px-8 py-12 lg:py-24 -" style={{ fontFamily: 'Inter, serif' }}>
       <div className="flex flex-col lg:flex-row items-start justify-between 2xl:-ml-8 xs:ml-20 mb-40">
         <div className="lg:w-1/2 mb-8 md:ml-4 lg:ml-12 lg:mt-[60px] xs:ml-20">
           <h1 className="text-[20px] xs:text-3xl xl:text-7xl sm:text-4xl md:text-5xl lg:text-4xl font-bold lg:mb-[50px] gx:text-[25px] mt-[-10px] gs:text-[25px] ipad:text-[45px] ipad:ml-[10px] ipm:ml-[10px] pro:text-[45px] pro:mt-[20px] 
