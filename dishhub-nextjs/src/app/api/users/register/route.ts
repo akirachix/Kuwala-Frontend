@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function POST(request: NextRequest) {
+export async function POST(request:Request) {
   const baseUrl = process.env.BASE_URL;
   if (!baseUrl) {
     console.error('BASE_URL environment variable is not set.');
@@ -10,6 +10,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  
   try {
     const { first_name, last_name, username, email, password } = await request.json();
     console.log('Received signup request');
