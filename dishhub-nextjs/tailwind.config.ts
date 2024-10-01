@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,6 +11,12 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens:{
+        'ipm': {'min': '1024px', 'max': '1050px'},
+        'ipa':{'min':'1280px', 'max':'1300px'},
+      
+        
+      }
     },
   },
   plugins: [],
