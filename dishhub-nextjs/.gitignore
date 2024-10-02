@@ -37,3 +37,31 @@ yarn-error.log*
 next-env.d.ts
 
 .env
+# Python Bytecode
+__pycache__/
+*.py[cod]
+
+# Logs
+*.log
+
+# Django Specific
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# Static files (if using collectstatic)
+staticfiles/
+
+# Virtual Environment
+venv/
+.env
+
+# IDE Configurations
+.idea/
+.vscode/
+
+# Miscellaneous
+*.pot
+*.egg-info/
+.DS_Store
