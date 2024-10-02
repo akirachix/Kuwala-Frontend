@@ -52,7 +52,6 @@ const SignUp = () => {
       console.log("Registration failed:", response.error);
     } else {
       setSuccessMessage("Account created successfully!");
-
       setTimeout(() => router.push("/login"), 2000);
     }
   };
@@ -62,21 +61,21 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-brown-100">
-      <div className="bg-white w-full h-screen flex flex-col md:flex-row">
-      <div className="w-1/2 bg-[#F5F5F5] flex items-center justify-center p-8">
-        <Image 
-          src="/images/form.png" 
-          alt="Login Illustration" 
-          width={500} 
-          height={300} 
-          className="w-full h-auto object-contain max-w-md"
-        />
-      </div>
+    <div className="flex items-center justify-center min-h-screen bg-white">
+      <div className="bg-[#F5F5F5] w-full h-screen flex flex-col md:flex-row">
+        <div className="flex items-center justify-center p-8">
+          <Image 
+            src="/images/form.png" 
+            alt="Sign Up Illustration" 
+            width={900}  
+            height={700}
+            className="  "
+          />
+        </div>
         <div className="w-full md:w-1/2 flex justify-center items-center p-8">
           <div className="w-full max-w-md">
-            <h1 className="text-4xl font-bold text-orange-800 mb-2">SignUp</h1>
-            <p className="text-gray-600 mb-6">Welcome To DishHub</p>
+            <h1 className="text-5xl font-bold text-[#883418] mb-6 text-center">Sign Up</h1>
+            <p className="text-black text-center mb-6 text-2xl">Welcome to DishHub</p>
 
             {successMessage && (
               <p className="text-green-500 text-sm mt-2 mb-4">{successMessage}</p>
@@ -91,12 +90,10 @@ const SignUp = () => {
                   type="text"
                   {...register("first_name")}
                   placeholder="First Name"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-400 text-gray-900"
+                  className="w-[149%] h-16 px-4 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] placeholder-gray-400 text-gray-900"
                 />
                 {errors.first_name && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.first_name.message}
-                  </p>
+                  <p className="text-red-500 text-sm mt-1">{errors.first_name.message}</p>
                 )}
               </div>
               <div>
@@ -104,12 +101,10 @@ const SignUp = () => {
                   type="text"
                   {...register("last_name")}
                   placeholder="Last Name"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-400 text-gray-900"
+                  className="w-[149%] h-16 px-4 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] placeholder-gray-400 text-gray-900 "
                 />
                 {errors.last_name && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.last_name.message}
-                  </p>
+                  <p className="text-red-500 text-sm mt-1">{errors.last_name.message}</p>
                 )}
               </div>
               <div>
@@ -117,12 +112,10 @@ const SignUp = () => {
                   type="text"
                   {...register("username")}
                   placeholder="Username"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-400 text-gray-900"
+                  className="w-[149%] h-16 px-4 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] placeholder-gray-400 text-gray-900"
                 />
                 {errors.username && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.username.message}
-                  </p>
+                  <p className="text-red-500 text-sm mt-1 ">{errors.username.message}</p>
                 )}
               </div>
               <div>
@@ -130,20 +123,18 @@ const SignUp = () => {
                   type="email"
                   {...register("email")}
                   placeholder="Email"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-400 text-gray-900"
+                  className="w-[148%] h-16 px-4 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] placeholder-gray-400 text-gray-900"
                 />
                 {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.email.message}
-                  </p>
+                  <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
                 )}
               </div>
-              <div className="relative">
+              <div className="relative w-[165%]">
                 <input
                   type={showPassword ? "text" : "password"}
                   {...register("password")}
                   placeholder="Password"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-400 text-gray-900 pr-10"
+                  className="w-[90%] h-16 px-4 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] placeholder-gray-400 text-gray-900 pr-10"
                 />
                 <button
                   type="button"
@@ -157,26 +148,18 @@ const SignUp = () => {
                   )}
                 </button>
                 {errors.password && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.password.message}
-                  </p>
+                  <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>
                 )}
               </div>
               <button
                 type="submit"
-                className="w-full bg-orange-800 text-white py-2 px-4 rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50"
+                className="w-[150%] bg-[#883418] text-[#F8A11B] font-extrabold text-3xl py-5 mt-7 rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] hover:bg-[#6B3E11] transition-colors"
               >
                 Sign Up
               </button>
             </form>
-            <p className="text-center text-sm text-gray-700 mt-4">
-              Already have an account?
-              <a
-                href="/login"
-                className="text-orange-500 hover:text-orange-800 ml-1 font-bold"
-              >
-                Login
-              </a>
+            <p className="text-center text-2xl text-black mt-8 ml-24">
+              Already have an account? <a href="/login" className="text-[#883418] font-bold hover:underline">Login</a>
             </p>
           </div>
         </div>
