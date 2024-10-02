@@ -109,6 +109,7 @@ export default function Login() {
                   <p className="text-red-500 mt-1">{errors.password.message}</p>
                 )}
               </div>
+              <Link href="/dashboard">
 
               <button
                 type="submit"
@@ -119,9 +120,10 @@ export default function Login() {
               >
                 {isSubmitting ? "Logging in..." : "Login"}
               </button>
+              </Link>
             </form>
 
-            <p className="text-center text-lg text-black mt-8">
+            <p className="text-center text-2xl text-black mt-8 ml-20">
               Do not have an account?{" "}
               <Link
                 href="/sign-up"
