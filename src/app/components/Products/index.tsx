@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Products() {
   return (
-    <main   id='product' className="flex flex-col items-center max-w-7xl mt-20 mb-20 mx-auto px-4 py-8" style={{ fontFamily: 'Inter, serif' }}>
+    <main   id='product' className="flex flex-col items-center max-w-7xl mb-20 mx-auto px-4 py-8 -mt-24 2xl:mt-0 " style={{ fontFamily: 'Inter, serif' }}>
       <h1 className="text-[#883418] text-4xl font-bold mt-24 mb-6">Product</h1>
       <p className="text-center text-xl mb-12 max-w-3xl text-20">
         <span className="text-[#883418] font-semibold">DishHub</span> is an innovative mobile app that enables you to easily organize <br />

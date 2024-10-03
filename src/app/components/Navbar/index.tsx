@@ -23,12 +23,12 @@ export default function Navbar() {
             src="/images/logo.png"
             alt="DH logo"
             width={120}
-            height={40}
-            className="w-full h-auto max-h-20 object-contain"
+            height={80}
+            className="w-full h-auto max-h-20 object-contain 2xl:ml-0 xl:-ml-60 2xl:mt-4 lg:mt-4 sm:mt-4 md:mt-4 mt-4"
           />
         </div>
 
-        <div className="flex items-center space-x-4 sm:space-x-8 md:space-x-12 mr-4 sm:mr-8 md:mr-12 lg:mr-20">
+        <div className="flex items-center space-x-8 sm:space-x-8 md:space-x-12 mr-4 sm:mr-8 md:mr-12 lg:mr-20">
           <div className="hidden md:flex space-x-4 sm:space-x-6 md:space-x-10 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[30px]">
             <Link href="#Landingpage" className="hover:text-amber-700 transition-colors">Home</Link>
             <Link href="#About" className="hover:text-amber-600 transition-colors">About</Link>
