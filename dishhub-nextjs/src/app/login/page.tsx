@@ -1,13 +1,15 @@
-"use client";
-import { useState } from "react";
+
+"use client"; 
 import Image from "next/image";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { userLogin } from "../utils/userLogin";
-import router from "next/router";
+import { useRouter } from "next/navigation"; 
 import Link from "next/link";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { setCookie } from "cookies-next"; 
 
 const loginSchema = yup.object().shape({
   username: yup.string().required("Username is required"),
@@ -28,24 +30,26 @@ export default function Login() {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [showPassword, setPasswordVisible] = useState(false);
+  const router = useRouter(); 
 
-  const onSubmit = async (loginData: {
-    username: string;
-    password: string;
-  }) => {
+  const onSubmit = async (loginData: { username: string; password: string; }) => {
     const { error } = await userLogin(loginData);
     if (error) {
       setErrorMessage(error);
       setSuccessMessage("");
     } else {
+      setCookie("isLoggedIn", "true", { maxAge: 60 * 60 * 24 * 365, path: '/login' });
+      
       setSuccessMessage("Login successful!");
       setErrorMessage("");
-      setTimeout(() => router.push("/signup"), 2000);
+      setTimeout(() => {
+        router.push("/dashboard");
+      }, 2000); 
     }
   };
 
   const togglePasswordVisibility = () => {
-    setPasswordVisible(!showPassword);
+    setPasswordVisible(!showPassword); 
   };
 
   return (
@@ -57,7 +61,6 @@ export default function Login() {
             alt="Login Illustration"
             width={1000}
             height={700}
-            className="" 
           />
         </div>
         <div className="w-full md:w-1/2 flex justify-center items-center p-8">
@@ -103,13 +106,11 @@ export default function Login() {
                   onClick={togglePasswordVisibility}
                   className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
                 >
-              
                 </button>
                 {errors.password && (
                   <p className="text-red-500 mt-1">{errors.password.message}</p>
                 )}
               </div>
-              <Link href="/dashboard">
 
               <button
                 type="submit"
@@ -120,7 +121,6 @@ export default function Login() {
               >
                 {isSubmitting ? "Logging in..." : "Login"}
               </button>
-              </Link>
             </form>
 
             <p className="text-center text-2xl text-black mt-8 ml-20">
@@ -138,3 +138,7 @@ export default function Login() {
     </div>
   );
 }
+
+
+
+

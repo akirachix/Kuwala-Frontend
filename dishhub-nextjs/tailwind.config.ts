@@ -12,8 +12,13 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: {
+        nesthub: { max: "1024px" }, 
+        nesthubmax: { max: "1280px" }, 
+      },
     },
   },
   plugins: [],
 };
+
 export default config;

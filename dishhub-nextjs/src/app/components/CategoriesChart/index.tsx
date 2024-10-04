@@ -63,6 +63,7 @@ const FoodItemsChart = () => {
       },
     ],
   });
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -131,15 +132,16 @@ const FoodItemsChart = () => {
         position: "top",
         labels: {
           font: {
-            size: 12,
+            size: 20, 
           },
         },
       },
       title: {
+  
         display: true,
         text: "No. of Food Items by Category",
         font: {
-          size: 20,
+          size: 25, 
         },
         color: "#7C3A19",
       },
@@ -150,12 +152,12 @@ const FoodItemsChart = () => {
           display: true,
           text: "Categories",
           font: {
-            size: 16,
+            size: 25,
           },
         },
         ticks: {
           font: {
-            size: 10,
+            size: 25,
           },
         },
       },
@@ -164,12 +166,12 @@ const FoodItemsChart = () => {
           display: true,
           text: "No. of Food Items",
           font: {
-            size: 16,
+            size: 25,
           },
         },
         ticks: {
           font: {
-            size: 10,
+            size: 25, 
           },
         },
         beginAtZero: true,
@@ -180,12 +182,15 @@ const FoodItemsChart = () => {
   if (isLoading) return <div>Loading chart...</div>;
 
   return (
-    <div className="chart-container 2xl:w-[950px] 2xl:h-[800px] xl:h-[1000px] xl:w-[600px] 2xl:pt-[7px] nest-hub:h-[900px] nest-hub-max:h-[900px] nest-hub:ml-1 nest-hub-max:ml-0">
-  <Bar data={chartData} options={options} />
-</div>
-
+    <div className="chart-container w-full h-[800px] md:h-[900px] lg:h-[1000px] xl:h-[1100px] 2xl:h-[1200px] flex justify-center">
+      <div className="w-full max-w-[1800px]"> 
+        <Bar data={chartData} options={options} />
+      </div>
+    </div>
   );
 };
 
 export default FoodItemsChart;
+
+
 
