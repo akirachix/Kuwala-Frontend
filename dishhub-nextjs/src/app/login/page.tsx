@@ -12,20 +12,7 @@ const loginSchema = yup.object().shape({
   password: yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
 });
 
-const customStyles = {
-  loginButton: {
-    backgroundColor: '#883418',
-    '&:hover': {
-      backgroundColor: '#6B3E11',
-    },
-  },
-  brownText: {
-    color: '#883418',
-    '&:hover': {
-      color: '#6B3E11',
-    },
-  },
-};
+
 
 export default function Login() {
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm({
