@@ -54,7 +54,8 @@ const SignUp = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+
+    formState: { errors},
   } = useForm<FormData>({
     resolver: yupResolver(signUpSchema),
   });
