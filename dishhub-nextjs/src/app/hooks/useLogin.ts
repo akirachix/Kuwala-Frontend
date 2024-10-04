@@ -9,7 +9,7 @@ const useLogin = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
-  const [userData, setUserData] = useState<any>(null); 
+  const [userData, setUserData] = useState(null); 
 
   const userLogin = async (loginData: { username: string; password: string }) => {
     try {

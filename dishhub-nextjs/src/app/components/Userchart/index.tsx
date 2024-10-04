@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { ChartOptions } from 'chart.js';
 import { Chart as ChartJS, LinearScale, CategoryScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
-import { fetchUsers } from '@/app/utils/fetchUsers';
+import { fetchUsers } from '@/app/utils/fetchUsers'; 
 
 ChartJS.register(
   LinearScale,
@@ -31,7 +31,6 @@ interface ChartData {
     backgroundColor: string;
     borderColor: string;
     borderWidth: number;
-    fontSize?: number;
   }[];
 }
 
@@ -48,14 +47,13 @@ const ActiveUsersChart = () => {
       },
     ],
   });
-
   const [isLoading, setIsLoading] = useState(true);
-  const [month, setMonth] = useState<string | undefined>(undefined);
+  const [month, setMonth] = useState<string | undefined>(undefined); 
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data: UserData[] = await fetchUsers();
+        const data: UserData[] = await fetchUsers(month); 
         const processedData = processChartData(data);
         setChartData(processedData);
       } catch (error) {
@@ -65,18 +63,21 @@ const ActiveUsersChart = () => {
       }
     };
     fetchData();
-  }, [month]);
+  }, [month]); 
 
   const processChartData = (data: UserData[]) => {
     const userCountsByMonth: Record<string, number> = {
       'Jan': 0, 'Feb': 0, 'Mar': 0, 'Apr': 0, 'May': 0, 'Jun': 0,
       'Jul': 0, 'Aug': 0, 'Sep': 0, 'Oct': 0, 'Nov': 0, 'Dec': 0,
     };
+
+
     data.forEach(user => {
       const date = new Date(user.created_at);
       if (isNaN(date.getTime())) {
         return;
       }
+
       const month = date.toLocaleString('default', { month: 'short' });
       if (userCountsByMonth[month] !== undefined) {
         userCountsByMonth[month] += 1;
@@ -84,6 +85,7 @@ const ActiveUsersChart = () => {
     });
     const labels = Object.keys(userCountsByMonth);
     const counts = labels.map(label => userCountsByMonth[label]);
+
     return {
       labels,
       datasets: [
@@ -93,7 +95,6 @@ const ActiveUsersChart = () => {
           backgroundColor: '#7C3A19',
           borderColor: '#7C3A19',
           borderWidth: 1,
-          fontSize: 20, 
         },
       ],
     };
@@ -108,18 +109,10 @@ const ActiveUsersChart = () => {
       legend: {
         display: true,
         position: 'top',
-        labels: {
-          font: {
-            size: 20, 
-          },
-        },
       },
       title: {
         display: true,
         text: 'Total Users Per Month',
-        font: {
-          size: 25, 
-        },
       },
     },
     scales: {
@@ -127,30 +120,10 @@ const ActiveUsersChart = () => {
         title: {
           display: true,
           text: 'Months',
-          font: {
-            size: 25,
-          },
-        },
-        ticks: {
-          font: {
-            size: 25,
-          },
         },
       },
       y: {
         beginAtZero: true,
-        title: {
-          display: true,
-          text: 'Number of Users',
-          font: {
-            size: 25,
-          },
-        },
-        ticks: {
-          font: {
-            size: 25, 
-          },
-        },
       },
     },
   };
@@ -161,10 +134,9 @@ const ActiveUsersChart = () => {
     <div>
       <select onChange={handleMonthChange} defaultValue="">
       </select>
-      <div className="chart-container w-full h-[600px] md:h-[700px] lg:h-[800px] xl:h-[900px] 2xl:h-[1000px] flex justify-center">
-        <div className="w-full max-w-[1800px]"> 
-          <Bar data={chartData} options={options} />
-        </div>
+
+      <div className="chart-container 2xl:h-[800px] 2xl:w-[900px] xl:h-[600px] xl:w-[800px] lg:h-[500px] lg:w-[700px] nest-hub:w-[400px] nest-hub-max:w-[2px] 2xl:pt-[8px] ipa:w-7/12 ipa:pl-5">
+        <Bar data={chartData} options={options} />
       </div>
     </div>
   );

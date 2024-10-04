@@ -95,22 +95,18 @@ const SignUp = () => {
     <div className="flex items-center justify-center min-h-screen bg-white">
       <div className="bg-[#F5F5F5] w-full h-screen flex flex-col md:flex-row">
         <div className="flex items-center justify-center p-8">
-          <Image
-            src="/images/form.png"
-            alt="Sign Up Illustration"
-            width={900}
+          <Image 
+            src="/images/form.png" 
+            alt="Sign Up Illustration" 
+            width={900}  
             height={700}
-            className=""
+            className="  "
           />
         </div>
         <div className="w-full md:w-1/2 flex justify-center items-center p-8">
           <div className="w-full max-w-md">
-            <h1 className="text-5xl font-bold text-[#883418] mb-6 text-center">
-              Sign Up
-            </h1>
-            <p className="text-black text-center mb-6 text-2xl">
-              Welcome to DishHub
-            </p>
+            <h1 className="text-5xl font-bold text-[#883418] mb-6 text-center">Sign Up</h1>
+            <p className="text-black text-center mb-6 text-2xl">Welcome to DishHub</p>
 
             {successMessage && (
               <p className="text-green-500 text-sm mt-2 mb-4">
@@ -130,9 +126,7 @@ const SignUp = () => {
                   className="w-[149%] h-16 px-4 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] placeholder-gray-400 text-gray-900"
                 />
                 {errors.first_name && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.first_name.message}
-                  </p>
+                  <p className="text-red-500 text-sm mt-1">{errors.first_name.message}</p>
                 )}
               </div>
               <div>
@@ -143,9 +137,7 @@ const SignUp = () => {
                   className="w-[149%] h-16 px-4 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] placeholder-gray-400 text-gray-900 "
                 />
                 {errors.last_name && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.last_name.message}
-                  </p>
+                  <p className="text-red-500 text-sm mt-1">{errors.last_name.message}</p>
                 )}
               </div>
               <div>
@@ -156,9 +148,7 @@ const SignUp = () => {
                   className="w-[149%] h-16 px-4 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] placeholder-gray-400 text-gray-900"
                 />
                 {errors.username && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.username.message}
-                  </p>
+                  <p className="text-red-500 text-sm mt-1 ">{errors.username.message}</p>
                 )}
               </div>
               <div>
@@ -166,15 +156,13 @@ const SignUp = () => {
                   type="email"
                   {...register("email")}
                   placeholder="Email"
-                  className="w-[149%] h-16 px-4 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] placeholder-gray-400 text-gray-900"
+                  className="w-[148%] h-16 px-4 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] placeholder-gray-400 text-gray-900"
                 />
                 {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.email.message}
-                  </p>
+                  <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
                 )}
               </div>
-              <div className="relative">
+              <div className="relative w-[165%]">
                 <input
                   type={showPassword ? "text" : "password"}
                   {...register("password")}
@@ -189,9 +177,7 @@ const SignUp = () => {
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </button>
                 {errors.password && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.password.message}
-                  </p>
+                  <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>
                 )}
               </div>
 

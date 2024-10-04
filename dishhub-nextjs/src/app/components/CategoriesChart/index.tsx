@@ -132,16 +132,15 @@ const FoodItemsChart = () => {
         position: "top",
         labels: {
           font: {
-            size: 20, 
+            size: 12,
           },
         },
       },
       title: {
-  
         display: true,
         text: "No. of Food Items by Category",
         font: {
-          size: 25, 
+          size: 20,
         },
         color: "#7C3A19",
       },
@@ -152,7 +151,7 @@ const FoodItemsChart = () => {
           display: true,
           text: "Categories",
           font: {
-            size: 25,
+            size: 16,
           },
         },
         ticks: {
@@ -191,6 +190,4 @@ const FoodItemsChart = () => {
 };
 
 export default FoodItemsChart;
-
-
 

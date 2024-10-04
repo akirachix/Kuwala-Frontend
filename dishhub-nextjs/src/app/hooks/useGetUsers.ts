@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { fetchUsers } from '../utils/fetchUsers';
 import { fetchCategories } from '../utils/fetchCategories';
 
-export const useGetDashboardData = (month?: string) => {
+export const useGetDashboardData = () => {
   const [metrics, setMetrics] = useState({
     TotalFoodItems: 0,
     TotalUsers: 0,
@@ -13,7 +13,7 @@ export const useGetDashboardData = (month?: string) => {
   useEffect(() => {
     const fetchMetrics = async () => {
       try {
-        const usersResult = await fetchUsers(month);
+        const usersResult = await fetchUsers();
         const foodItemsResult = await fetchCategories();
 
         setMetrics({
@@ -31,7 +31,7 @@ export const useGetDashboardData = (month?: string) => {
       }
     };
     fetchMetrics();
-  }, [month]); 
+  }, []);
 
   return { metrics, isLoading, error };
 };
