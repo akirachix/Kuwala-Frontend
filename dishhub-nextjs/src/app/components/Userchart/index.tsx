@@ -128,7 +128,7 @@ const ActiveUsersChart = () => {
     },
   };
 
-  if (isLoading) return <div>Loading chart...</div>;
+  if (isLoading) return <div>Loading chart...</div>
 
   return (
     <div>
