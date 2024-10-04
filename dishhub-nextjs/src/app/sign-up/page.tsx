@@ -200,7 +200,7 @@ const SignUp = () => {
                 className="w-[150%] bg-[#883418] text-[#F8A11B] font-extrabold text-3xl py-5 mt-7 rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] hover:bg-[#6B3E11] transition-colors"
               >
                 Sign Up
-              </button>
+            </button>
             </form>
 
             <p className="text-center text-2xl text-black mt-8 ml-20">
