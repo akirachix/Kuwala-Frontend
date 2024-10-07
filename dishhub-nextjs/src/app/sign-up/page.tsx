@@ -87,7 +87,7 @@ const SignUp = () => {
   };
 
   if (isCheckingLogin) {
-    <div>Loading...</div>
+    <p>Loading...</p>
   }
 
 
