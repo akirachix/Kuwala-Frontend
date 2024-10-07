@@ -92,6 +92,7 @@ const SignUp = () => {
 
 
   return (
+    <>
     <div className="flex items-center justify-center min-h-screen bg-white">
       <div className="bg-[#F5F5F5] w-full h-screen flex flex-col md:flex-row">
         <div className="flex items-center justify-center p-8">
@@ -103,7 +104,6 @@ const SignUp = () => {
             className=""
           />
         </div>
-                {/* Rest of the JSX */}
         <div className="w-full md:w-1/2 flex justify-center items-center p-8">
           <div className="w-full max-w-md">
             <h1 className="text-5xl font-bold text-[#883418] mb-6 text-center">Sign Up</h1>
@@ -203,6 +203,7 @@ const SignUp = () => {
         </div>
       </div>
     </div>
+    </>
     
   );
 };
