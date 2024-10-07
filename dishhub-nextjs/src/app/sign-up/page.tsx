@@ -33,6 +33,17 @@ const SignUp = () => {
   const router = useRouter();
   const [isCheckingLogin, setIsCheckingLogin] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [showPassword, setPasswordVisible] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: yupResolver(signUpSchema),
+  });
 
   useEffect(() => {
     const checkLoginStatus = () => {
@@ -50,18 +61,6 @@ const SignUp = () => {
       router.push("/dashboard");
     }
   }, [isCheckingLogin, isLoggedIn, router]);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormData>({
-    resolver: yupResolver(signUpSchema),
-  });
-
-  const [apiError, setApiError] = useState<string | null>(null);
-  const [successMessage, setSuccessMessage] = useState<string | null>(null);
-  const [showPassword, setPasswordVisible] = useState(false);
 
   const onSubmit = async (data: FormData) => {
     console.log("SignUp submitted", data);
@@ -100,7 +99,7 @@ const SignUp = () => {
             alt="Sign Up Illustration" 
             width={900}  
             height={700}
-            className="  "
+            className=""
           />
         </div>
         <div className="w-full md:w-1/2 flex justify-center items-center p-8">
@@ -134,7 +133,7 @@ const SignUp = () => {
                   type="text"
                   {...register("last_name")}
                   placeholder="Last Name"
-                  className="w-[149%] h-16 px-4 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] placeholder-gray-400 text-gray-900 "
+                  className="w-[149%] h-16 px-4 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] placeholder-gray-400 text-gray-900"
                 />
                 {errors.last_name && (
                   <p className="text-red-500 text-sm mt-1">{errors.last_name.message}</p>
@@ -148,7 +147,7 @@ const SignUp = () => {
                   className="w-[149%] h-16 px-4 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] placeholder-gray-400 text-gray-900"
                 />
                 {errors.username && (
-                  <p className="text-red-500 text-sm mt-1 ">{errors.username.message}</p>
+                  <p className="text-red-500 text-sm mt-1">{errors.username.message}</p>
                 )}
               </div>
               <div>
@@ -186,7 +185,7 @@ const SignUp = () => {
                 className="w-[150%] bg-[#883418] text-[#F8A11B] font-extrabold text-3xl py-5 mt-7 rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] hover:bg-[#6B3E11] transition-colors"
               >
                 Sign Up
-            </button>
+              </button>
             </form>
 
             <p className="text-center text-2xl text-black mt-8 ml-20">
