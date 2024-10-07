@@ -101,7 +101,6 @@ const SignUp = () => {
             alt="Sign Up Illustration" 
             width={900}  
             height={700}
-            className=""
           />
         </div>
         <div className="w-full md:w-1/2 flex justify-center items-center p-8">
