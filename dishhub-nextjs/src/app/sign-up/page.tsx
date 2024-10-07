@@ -87,12 +87,12 @@ const SignUp = () => {
   };
 
   if (isCheckingLogin) {
-    return <div>Loading...</div>;
+    <div>Loading...</div>
   }
 
 
   return (
-    <>
+    
     <div className="flex items-center justify-center min-h-screen bg-white">
       <div className="bg-[#F5F5F5] w-full h-screen flex flex-col md:flex-row">
         <div className="flex items-center justify-center p-8">
@@ -203,7 +203,6 @@ const SignUp = () => {
         </div>
       </div>
     </div>
-    </>
     
   );
 };
