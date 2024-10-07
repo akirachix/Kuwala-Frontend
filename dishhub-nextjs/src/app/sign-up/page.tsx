@@ -89,7 +89,7 @@ const SignUp = () => {
   if (isCheckingLogin) {
     return <div>Loading...</div>;
   }
-}
+
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-white">
@@ -103,7 +103,7 @@ const SignUp = () => {
             className=""
           />
         </div>
-          {/* Rest of the JSX */}
+                {/* Rest of the JSX */}
         <div className="w-full md:w-1/2 flex justify-center items-center p-8">
           <div className="w-full max-w-md">
             <h1 className="text-5xl font-bold text-[#883418] mb-6 text-center">Sign Up</h1>
