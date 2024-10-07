@@ -44,7 +44,7 @@ const SignUp = () => {
   } = useForm<FormData>({
     resolver: yupResolver(signUpSchema),
   });
-
+  
   useEffect(() => {
     const checkLoginStatus = () => {
       const loggedIn = getCookie("isLoggedIn");
@@ -61,6 +61,19 @@ const SignUp = () => {
       router.push("/dashboard");
     }
   }, [isCheckingLogin, isLoggedIn, router]);
+
+  const {
+    register,
+    handleSubmit,
+
+    formState: { errors},
+  } = useForm<FormData>({
+    resolver: yupResolver(signUpSchema),
+  });
+
+  const [apiError, setApiError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [showPassword, setPasswordVisible] = useState(false);
 
   const onSubmit = async (data: FormData) => {
     console.log("SignUp submitted", data);
@@ -90,9 +103,7 @@ const SignUp = () => {
     <p>Loading...</p>
   };
 
-
   return (
-    
     <div className="flex items-center justify-center min-h-screen bg-white">
       <div className="bg-[#F5F5F5] w-full h-screen flex flex-col md:flex-row">
         <div className="flex items-center justify-center p-8">
@@ -134,7 +145,7 @@ const SignUp = () => {
                   type="text"
                   {...register("last_name")}
                   placeholder="Last Name"
-                  className="w-[149%] h-16 px-4 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] placeholder-gray-400 text-gray-900"
+                  className="w-[149%] h-16 px-4 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] placeholder-gray-400 text-gray-900 "
                 />
                 {errors.last_name && (
                   <p className="text-red-500 text-sm mt-1">{errors.last_name.message}</p>
@@ -186,7 +197,7 @@ const SignUp = () => {
                 className="w-[150%] bg-[#883418] text-[#F8A11B] font-extrabold text-3xl py-5 mt-7 rounded-md focus:outline-none focus:ring-2 focus:ring-[#8B4513] hover:bg-[#6B3E11] transition-colors"
               >
                 Sign Up
-              </button>
+            </button>
             </form>
 
             <p className="text-center text-2xl text-black mt-8 ml-20">
@@ -202,7 +213,6 @@ const SignUp = () => {
         </div>
       </div>
     </div>
-    
   );
 };
 
