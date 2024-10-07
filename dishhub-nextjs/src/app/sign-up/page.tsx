@@ -102,7 +102,7 @@ const SignUp = () => {
             className=""
           />
         </div>
-      <div className="w-full md:w-1/2 flex justify-center items-center p-8">
+        <div className="w-full md:w-1/2 flex justify-center items-center p-8">
           <div className="w-full max-w-md">
             <h1 className="text-5xl font-bold text-[#883418] mb-6 text-center">Sign Up</h1>
             <p className="text-black text-center mb-6 text-2xl">Welcome to DishHub</p>
