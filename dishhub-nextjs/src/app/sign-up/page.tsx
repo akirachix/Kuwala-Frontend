@@ -46,6 +46,7 @@ const SignUp = () => {
 
     checkLoginStatus();
   }, []);
+  
 
   const {
     register,
