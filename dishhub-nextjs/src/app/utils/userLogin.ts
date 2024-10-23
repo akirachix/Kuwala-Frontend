@@ -11,7 +11,7 @@ export const userLogin = async (loginData: { username: string; password: string 
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}:${response.statusText}`);
+      throw new Error(`You don't have an account.Please Sign up`);
     }
 
     return await response.json();

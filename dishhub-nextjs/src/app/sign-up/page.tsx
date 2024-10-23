@@ -475,7 +475,7 @@ const SignUp = () => {
         maxAge: 60 * 60 * 24 * 365,
         path: "/",
       });
-      setTimeout(() => router.push("/login"), 2000);
+      setTimeout(() => router.push("/login"), 1000);
     }
   };
 
